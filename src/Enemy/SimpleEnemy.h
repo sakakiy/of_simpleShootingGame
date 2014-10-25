@@ -14,7 +14,10 @@
 
 class SimpleEnemy : public AbstEnemy{
 private:
+    // values
     int hitNum;             // 弾のヒット数
+    // funcitons
+    void init();
     
 public:
     SimpleEnemy();
@@ -22,6 +25,7 @@ public:
     void update();
     void draw();
     void reactShotHit();    // 自弾がヒットした時のリアクション
+    void dead();            // 体力がなくなって死ぬときの処理
 };
 
 #endif /* defined(__simpleShootingGame__SimpleEnemy__) */

@@ -12,11 +12,21 @@
 #include <stdio.h>
 #include "AbstObj.h"
 
+enum E_Status{
+    e_live,
+    e_dying,
+    e_dead
+};
+
 class AbstEnemy : public AbstObj{
 private:
     
+protected:
+    enum E_Status status;
+   
 public:
     virtual void reactShotHit() = 0;  // 自機の弾にあたった時の反応
+    virtual void dead() = 0;
 };
 
 
