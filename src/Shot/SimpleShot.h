@@ -17,18 +17,18 @@
 class SimpleShot : public AbstShot{
 private:
     static const int bulletMaxNum = 10;   // 弾丸の最大数
-    SimpleBullet bullet[bulletMaxNum];
-    int bulletIndex;        // 射出する弾丸の番号
-    int shotInterval;       // 射出のインターバル（F数）
-    int shotTime;           // 射出したフレーム
+    SimpleBullet    bullet[bulletMaxNum];
+    int             bulletIndex;        // 射出する弾丸の番号
+    int             shotInterval;       // 射出のインターバル（F数）
+    int             shotTime;           // 射出したフレーム
     
 public:
     SimpleShot();
-    void update();
-    void draw();
-    void shot(float _x, float _y);
-    void initShot();
-    void checkCollisionEnemy(AbstEnemy* );    // 敵とのヒット判定
+    void            update();
+    void            draw();
+    void            shot(float _x, float _y);
+    void            initShot();
+    void            checkCollisionEnemy(AbstEnemy* );    // 敵とのヒット判定
 };
 
 #endif /* defined(__simpleShootingGame__SimpleShot__) */
