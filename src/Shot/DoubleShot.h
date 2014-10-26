@@ -18,7 +18,7 @@ private:
     static const int bulletMaxNum = 10;   // 弾丸の最大数
     SimpleBullet bullet[bulletMaxNum];
     int bulletIndex;        // 射出する弾丸の番号
-    int shotInterval;       // 射出のインターバル（F数）
+    int shotInterval;       // 射出のインターバル（F 数）
     int shotTime;           // 射出したフレーム
     
 public:

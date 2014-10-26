@@ -25,8 +25,9 @@ protected:
     enum E_Status status;
    
 public:
-    virtual void reactShotHit() = 0;  // 自機の弾にあたった時の反応
-    virtual void dead() = 0;
+    virtual void reactShotHit() = 0;    // 自機の弾にあたった時の反応
+    virtual void dead() = 0;            // 死亡処理
+    virtual bool isHitable() = 0;       // 当たり判定処理をする状態かどうか
 };
 
 

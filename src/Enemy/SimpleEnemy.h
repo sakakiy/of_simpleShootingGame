@@ -26,6 +26,7 @@ public:
     void draw();
     void reactShotHit();    // 自弾がヒットした時のリアクション
     void dead();            // 体力がなくなって死ぬときの処理
+    bool isHitable();       // 当たり判定処理をする状態かどうか
 };
 
 #endif /* defined(__simpleShootingGame__SimpleEnemy__) */

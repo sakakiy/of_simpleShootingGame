@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    attacker    = new Attacker(200, 200, 20, 20);
+    attacker    = new Attacker(ofGetWidth()/2, 500, 20, 20);
     shot        = new SimpleShot();
     enemy       = new SimpleEnemy(ofGetWidth()/2, 100, 50, 50);
     
@@ -53,6 +53,10 @@ void ofApp::changeShot(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     // cout << "KEY : " << key << "\n";
+    if(key == 'i'){
+        setup();
+        cout << "INIT ofApp\n";
+    }
 }
 
 //--------------------------------------------------------------

@@ -47,14 +47,18 @@ void DoubleShot::initShot(){
 
 // 敵とのヒット判定
 void DoubleShot::checkCollisionEnemy(AbstEnemy * enemy){
-    float diffX, diffY, sumRadius;
-    for(int i=0; i<bulletMaxNum; i++){
-        diffX = bullet[i].getX() - enemy->getX();
-        diffY = bullet[i].getY() - enemy->getY();
-        sumRadius = bullet[i].getW()/2 + enemy->getW()/2;
-        if(pow(sumRadius, 2) > pow(diffX, 2) + pow(diffY, 2)){
-            bullet[i].initShot();
-            cout << "DOUBLE HIT : " << i << "\n";
+    if(enemy->isHitable()) {
+        float diffX, diffY, sumRadius;
+        for(int i=0; i<bulletMaxNum; i++){
+            diffX = bullet[i].getX() - enemy->getX();
+            diffY = bullet[i].getY() - enemy->getY();
+            sumRadius = bullet[i].getW()/2 + enemy->getW()/2;
+            
+            if(pow(sumRadius, 2) > pow(diffX, 2) + pow(diffY, 2)){
+                bullet[i].initShot();
+                enemy->reactShotHit();
+                cout << "DOUBLE HIT : " << i << "\n";
+            }
         }
     }
 }

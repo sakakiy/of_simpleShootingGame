@@ -35,7 +35,10 @@ void SimpleEnemy::init(){
 }
 
 void SimpleEnemy::update(){
-    
+    if(status == e_dying){
+        status = e_dead;
+        dead();
+    }
 }
 
 void SimpleEnemy::draw(){
@@ -53,12 +56,9 @@ void SimpleEnemy::draw(){
 
 void SimpleEnemy::reactShotHit(){
     hitNum++;
-    w++;
     cout << "HIT !! : " << hitNum << "\n";
-    if(hitNum == 2){
+    if(2 < hitNum){
         status = e_dying;
-    } else if(3 <= hitNum) {
-        dead();
     }
 }
 
@@ -68,4 +68,15 @@ void SimpleEnemy::dead(){
     x       = -100;
     y       = -100;
     init();
+}
+
+// 当たり判定をするかどうか
+bool SimpleEnemy::isHitable(){
+    // live なら当たり判定を行える
+    if(status == e_live){
+        return true;
+    } else {
+        return false;
+    }
+
 }
