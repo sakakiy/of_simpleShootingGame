@@ -5,13 +5,17 @@ void ofApp::setup(){
     attacker    = new Attacker(ofGetWidth()/2, 500, 20, 20);
     shot        = new SimpleShot();
     enemy       = new SimpleEnemy(ofGetWidth()/2, 100, 50, 50);
-    
+    enemy2      = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), 150, 40, 40);
     attacker->setShot(shot);
     
     colMng = CollisionMng();
     colMng.setAttacker(attacker);
     colMng.setShot(shot);
-    colMng.setEnemy(enemy);
+    //colMng.setEnemy(enemy); // TODO 引数を EnemyMng にする
+    colMng.setEnemyMng(&enemyMng);
+    
+    enemyMng.addEnemy(enemy);
+    enemyMng.addEnemy(enemy2);
 }
 
 //--------------------------------------------------------------
@@ -22,7 +26,7 @@ void ofApp::update(){
     // ショットや自機の動作更新
     shot->update();
     attacker->update();
-    enemy->update();
+    enemyMng.update();
     
     // キーボード入力によるショット変更
     changeShot();
@@ -32,7 +36,7 @@ void ofApp::update(){
 void ofApp::draw(){
     shot->draw();
     attacker->draw();
-    enemy->draw();
+    enemyMng.draw();
 }
 
 //--------------------------------------------------------------

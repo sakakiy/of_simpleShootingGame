@@ -13,14 +13,16 @@
 #include "ofMain.h"
 #include "Attacker.h"
 #include "AbstShot.h"
+#include "EnemyMng.h"
 #include "SimpleEnemy.h"
 
 
 class CollisionMng{
 private:
-    Attacker*       attacker;
-    AbstShot*       shot;
-    SimpleEnemy*    enemy;
+    Attacker        * attacker;
+    AbstShot        * shot;
+    // SimpleEnemy*    enemy;
+    EnemyMng        * enemyMng;
     
 public:
     CollisionMng();
@@ -29,7 +31,8 @@ public:
     void checkShotEnemy();      // 自弾と敵の衝突判定
     void setAttacker(Attacker*);
     void setShot(AbstShot*);
-    void setEnemy(SimpleEnemy*);
+    // void setEnemy(SimpleEnemy*);
+    void setEnemyMng(EnemyMng*);
 
 };
 

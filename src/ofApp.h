@@ -6,6 +6,8 @@
 #include "AbstShot.h"
 #include "SimpleShot.h"
 #include "DoubleShot.h"
+
+#include "EnemyMng.h"
 #include "AbstEnemy.h"
 #include "SimpleEnemy.h"
 
@@ -14,10 +16,11 @@
 class ofApp : public ofBaseApp{
     
 private:
-    Attacker* attacker;
-    AbstShot* shot;
-    SimpleEnemy* enemy;
-    CollisionMng colMng;
+    Attacker*       attacker;
+    AbstShot*       shot;
+    EnemyMng        enemyMng;
+    SimpleEnemy     * enemy, * enemy2;
+    CollisionMng    colMng;
     
 public:
     void setup();
