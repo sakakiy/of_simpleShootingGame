@@ -61,6 +61,7 @@ void SimpleEnemy::reactShotHit(){
     if(2 < hitNum){
         status = e_dying;
     }
+
 }
 
 void SimpleEnemy::dying(){
@@ -79,7 +80,7 @@ void SimpleEnemy::dying(){
     if(h < 0){
         h = 0;
     }
-//    if(w == 0 &&  h == 0 && colorAlfa == 0){
+    
     if(colorAlfa == 0){
         dead();
     }
