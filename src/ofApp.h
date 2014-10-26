@@ -19,7 +19,6 @@ private:
     Attacker*       attacker;
     AbstShot*       shot;
     EnemyMng        enemyMng;
-    SimpleEnemy     * enemy, * enemy2;
     CollisionMng    colMng;
     
 public:

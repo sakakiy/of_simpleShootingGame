@@ -11,17 +11,19 @@
 
 #include <stdio.h>
 #include "AbstEnemy.h"
+#include "SimpleEnemy.h"
 
 class EnemyMng{
     
 private:
     int         enemyNum;
-    int         enemyMax;
+    //    int         enemyMax;
     AbstEnemy*  enemies[10];
     
-public :
+    public :
     EnemyMng();
-    bool        addEnemy(AbstEnemy* );
+    // bool        addEnemy(AbstEnemy* );
+    void        init();
     void        update();
     void        draw();
     int         getEnemyNum(){return enemyNum;}
