@@ -12,6 +12,7 @@
 #include "SimpleEnemy.h"
 
 #include "CollisionMng.h"
+#include "StatusViewer.h"
 
 class ofApp : public ofBaseApp{
     
@@ -20,6 +21,7 @@ private:
     AbstShot*       shot;
     EnemyMng        enemyMng;
     CollisionMng    colMng;
+    StatusViewer    sttViewer;
     
 public:
     void setup();

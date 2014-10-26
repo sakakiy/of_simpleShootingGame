@@ -13,6 +13,8 @@ void ofApp::setup(){
     colMng.setAttacker(attacker);
     colMng.setShot(shot);
     colMng.setEnemyMng(&enemyMng);
+    
+    sttViewer.init();
 }
 
 //--------------------------------------------------------------
@@ -25,6 +27,8 @@ void ofApp::update(){
     attacker->update();
     enemyMng.update();
     
+    sttViewer.update();
+    
     // キーボード入力によるショット変更
     changeShot();
 }
@@ -34,6 +38,7 @@ void ofApp::draw(){
     shot->draw();
     attacker->draw();
     enemyMng.draw();
+    sttViewer.draw();
 }
 
 //--------------------------------------------------------------
@@ -57,6 +62,8 @@ void ofApp::keyPressed(int key){
     if(key == 'i'){
         setup();
         cout << "INIT ofApp\n";
+    } else if(key == 'v'){
+        sttViewer.addScore(100);
     }
 }
 
