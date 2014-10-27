@@ -15,6 +15,8 @@ void ofApp::setup(){
     colMng.setEnemyMng(&enemyMng);
     
     sttViewer.init();
+    
+    enemyMng.setSttViewer(&sttViewer);
 }
 
 //--------------------------------------------------------------

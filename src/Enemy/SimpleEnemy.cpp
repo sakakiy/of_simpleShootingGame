@@ -33,6 +33,8 @@ void SimpleEnemy::init(){
     hitNum      = 0;
     color       = ofColor(255, 200, 170);
     colorAlfa   = 255;
+    
+    score       = 150;
 }
 
 void SimpleEnemy::update(){
@@ -60,8 +62,9 @@ void SimpleEnemy::reactShotHit(){
     cout << "HIT !! : " << hitNum << "\n";
     if(2 < hitNum){
         status = e_dying;
+        sttViewer->addScore(score);
     }
-
+    
 }
 
 void SimpleEnemy::dying(){
@@ -89,7 +92,7 @@ void SimpleEnemy::dying(){
 // 死亡処理
 void SimpleEnemy::dead(){
     status  = e_dead;
-    x       = -100;
+    x       = 100;
     y       = -100;
     init();
 }
@@ -102,5 +105,5 @@ bool SimpleEnemy::isHitable(){
     } else {
         return false;
     }
-
+    
 }

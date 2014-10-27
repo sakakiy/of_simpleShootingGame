@@ -25,6 +25,7 @@ void StatusViewer::init(){
 }
 
 void StatusViewer::addScore(int s){
+    cout << "add score called.\n";
     currentScore += s;
 }
 

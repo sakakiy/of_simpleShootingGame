@@ -19,6 +19,12 @@ void EnemyMng::init(){
     }
 }
 
+void EnemyMng::setSttViewer(StatusViewer *s){
+    for(int i=0; i<enemyNum; i++){
+        enemies[i]->setSttViewer(s);
+    }
+}
+
 void EnemyMng::update(){
     for(int i=0; i<enemyNum; i++){
         enemies[i]->update();

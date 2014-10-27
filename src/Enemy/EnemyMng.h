@@ -12,22 +12,23 @@
 #include <stdio.h>
 #include "AbstEnemy.h"
 #include "SimpleEnemy.h"
+#include "StatusViewer.h"
 
 class EnemyMng{
     
 private:
-    int         enemyNum;
-    //    int         enemyMax;
-    AbstEnemy*  enemies[10];
+    int             enemyNum;
+    AbstEnemy       * enemies[10];
     
     public :
+    
     EnemyMng();
-    // bool        addEnemy(AbstEnemy* );
-    void        init();
-    void        update();
-    void        draw();
-    int         getEnemyNum(){return enemyNum;}
-    AbstEnemy   * getEnemy(int i){return enemies[i];}
+    void            init();
+    void            update();
+    void            draw();
+    void            setSttViewer(StatusViewer *s);
+    int             getEnemyNum(){return enemyNum;}
+    AbstEnemy       * getEnemy(int i){return enemies[i];}
     
 };
 
