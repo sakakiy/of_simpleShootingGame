@@ -21,13 +21,7 @@ void StatusViewer::init(){
     scoreY          = 100;
     scoreSize       = 30;
     
-    /*
-    cout << "FONT LOAD before\n";
-    
-    font.loadFont("Arial.ttf", 20, false);
-    cout << "FONT LOAD after\n";
-     
-     */
+    font.loadFont("verdana.ttf", 30, false);
 }
 
 void StatusViewer::addScore(int s){
@@ -45,8 +39,5 @@ void StatusViewer::draw(){
     stringstream ss;
     ss << drawScore;
     ofSetColor(0, 55, 0);
-    ofDrawBitmapString(ss.str(), scoreX, scoreY);
-    // font.drawString(ss.str(), scoreX, scoreY);
-    //font.drawString("HELLO.", scoreX, scoreY);
-
+    font.drawString(ss.str(), scoreX, scoreY);
 }

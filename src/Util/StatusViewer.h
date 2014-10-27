@@ -16,7 +16,7 @@ class StatusViewer{
 private:
     int             currentScore, drawScore;
     float           scoreX, scoreY, scoreSize, scoreV;
-    // ofTrueTypeFont  font; // 文字表示のためのフォントインスタンス
+    ofTrueTypeFont  font; // 文字表示のためのフォントインスタンス
     
 public:
     StatusViewer();
