@@ -15,7 +15,7 @@
 class SimpleEnemy : public AbstEnemy{
 private:
     // values
-    int hitNum;             // 弾のヒット数
+    int hitPoint;           // 体力
     int colorAlfa;          // 色の透明度
     // funcitons
     void init();

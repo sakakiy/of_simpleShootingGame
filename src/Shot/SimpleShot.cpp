@@ -10,7 +10,7 @@
 
 SimpleShot::SimpleShot(){
     bulletIndex     = 0;
-    shotInterval    = 5; // このフレーム数間を開ける
+    shotInterval    = 3; // このフレーム数間を開ける
     shotTime        = 0;
 }
 

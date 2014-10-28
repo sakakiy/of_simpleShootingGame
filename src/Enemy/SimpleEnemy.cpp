@@ -30,7 +30,7 @@ void SimpleEnemy::init(){
     // 生存ステータス
     status      = e_live;
     
-    hitNum      = 0;
+    hitPoint    = 3;
     color       = ofColor(255, 200, 170);
     colorAlfa   = 255;
     
@@ -57,10 +57,10 @@ void SimpleEnemy::draw(){
 }
 
 void SimpleEnemy::reactShotHit(){
-    hitNum++;
+    hitPoint--;
     
-    cout << "HIT !! : " << hitNum << "\n";
-    if(2 < hitNum){
+    // cout << "HIT !! : " << hitNum << "\n";
+    if(hitPoint <= 0){
         status = e_dying;
         sttViewer->addScore(score);
     }

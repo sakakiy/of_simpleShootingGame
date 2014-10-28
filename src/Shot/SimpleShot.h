@@ -16,7 +16,7 @@
 
 class SimpleShot : public AbstShot{
 private:
-    static const int bulletMaxNum = 10;   // 弾丸の最大数
+    static const int bulletMaxNum = 20;   // 弾丸の最大数
     SimpleBullet    bullet[bulletMaxNum];
     int             bulletIndex;        // 射出する弾丸の番号
     int             shotInterval;       // 射出のインターバル（F数）

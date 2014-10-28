@@ -38,16 +38,3 @@ void EnemyMng::draw(){
     }
     
 }
-
-/*
- bool EnemyMng::addEnemy(AbstEnemy* en){
- if(enemyMax <= enemyNum){
- return false;
- }
- 
- enemies[enemyNum] = en;
- enemyNum++;
- 
- return true;
- }
- */
