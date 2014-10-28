@@ -25,7 +25,7 @@ public:
     SimpleEnemy(float _x, float _y, float _w, float _h);
     void update();
     void draw();
-    void reactShotHit();    // 自弾がヒットした時の処理
+    void reactShotHit(int); // ショットがヒットした時の処理
     void dying();           // 死ぬリアクション
     void dead();            // 体力がなくなって死ぬときの処理
     bool isHitable();       // 当たり判定処理をする状態かどうか

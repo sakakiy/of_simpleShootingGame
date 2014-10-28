@@ -56,8 +56,8 @@ void SimpleEnemy::draw(){
     }
 }
 
-void SimpleEnemy::reactShotHit(){
-    hitPoint--;
+void SimpleEnemy::reactShotHit(int damage){
+    hitPoint-=damage;
     
     // cout << "HIT !! : " << hitNum << "\n";
     if(hitPoint <= 0){

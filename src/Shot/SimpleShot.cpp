@@ -9,9 +9,10 @@
 #include "SimpleShot.h"
 
 SimpleShot::SimpleShot(){
-    bulletIndex     = 0;
-    shotInterval    = 3; // このフレーム数間を開ける
+    bulletIndex     = 0;    // 弾丸のインデックス
+    shotInterval    = 3;    // このフレーム数間を空ける
     shotTime        = 0;
+    damage          = 1;    // ショットのダメージ
 }
 
 void SimpleShot::update(){
@@ -28,7 +29,7 @@ void SimpleShot::draw(){
 
 void SimpleShot::shot(float _x, float _y){
     if(ofGetFrameNum() - shotTime > shotInterval){
-        // 弾が撃てる状態なら撃つ
+        // 弾丸が撃てる状態なら撃つ
         if(bullet[bulletIndex].shot(_x, _y)){
             bulletIndex = (bulletIndex + 1) % bulletMaxNum;
             shotTime = ofGetFrameNum();
@@ -54,7 +55,7 @@ void SimpleShot::checkCollisionEnemy(AbstEnemy * enemy){
             // ヒットした時の処理
             if(pow(sumRadius, 2) > pow(diffX, 2) + pow(diffY, 2)){
                 bullet[i].initShot();
-                enemy->reactShotHit();
+                enemy->reactShotHit(damage);
                 cout << "SIMPLE HIT : " << i << "\n";
             }
         }

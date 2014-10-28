@@ -15,10 +15,12 @@
 
 class AbstShot : public AbstObj{
     
+protected:
+    int             damage;                         // ショットのダメージ
 public:
     
-    virtual void    shot(float x, float y) = 0;    // 弾丸を発射する
-    virtual void    initShot() = 0;                // 弾丸を初期化する
+    virtual void    shot(float x, float y) = 0;     // ショットを発射する
+    virtual void    initShot() = 0;                 // ショットを初期化する
     virtual void    checkCollisionEnemy(AbstEnemy*) = 0;
 };
 

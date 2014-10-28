@@ -56,8 +56,7 @@ void DoubleShot::checkCollisionEnemy(AbstEnemy * enemy){
             
             if(pow(sumRadius, 2) > pow(diffX, 2) + pow(diffY, 2)){
                 bullet[i].initShot();
-                enemy->reactShotHit();
-                cout << "DOUBLE HIT : " << i << "\n";
+                enemy->reactShotHit(damage);
             }
         }
     }
