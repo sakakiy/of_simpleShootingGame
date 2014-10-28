@@ -15,10 +15,12 @@
 class SimpleEnemy : public AbstEnemy{
 private:
     // values
-    int hitPoint;           // 体力
-    int colorAlfa;          // 色の透明度
+    int     hitPoint;           // 体力
+    int     colorAlfa;          // 色の透明度
+    int     hitFrame;           // ショットがあたったフレーム
+    int     reactFrame;         // ショットがあたって色が変わっているフレーム
     // funcitons
-    void init();
+    void    init();
     
 public:
     SimpleEnemy();

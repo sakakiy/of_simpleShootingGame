@@ -9,13 +9,13 @@
 #include "EnemyMng.h"
 
 EnemyMng::EnemyMng(){
-    enemyNum = 5;
+    enemyNum = 15;
    
 }
 
 void EnemyMng::init(){
     for(int i=0; i<enemyNum; i++){
-        enemies[i] = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), 100 + ofRandom(1.0) * 50, 30, 30);
+        enemies[i] = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), 150 + ofRandom(1.0) * 100, 30, 30);
     }
 }
 

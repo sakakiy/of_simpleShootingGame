@@ -35,29 +35,37 @@ void SimpleEnemy::init(){
     colorAlfa   = 255;
     
     score       = 150;
+    
+    hitFrame    = 0;
+    reactFrame  = 3;    // ショットがあたって色が変わっているフレーム
 }
 
 void SimpleEnemy::update(){
     if(status == e_dying){
         dying();
     }
+    
+    // ショットにあたった時の色の変化と元に戻る
+    if(hitFrame != 0 && ofGetFrameNum() - hitFrame > reactFrame){
+        hitFrame    = 0;
+        color       = ofColor(255, 200, 170);
+    }
 }
 
 void SimpleEnemy::draw(){
     
-    // 生存ステータスなら描画
-    if(status == e_live){
-        ofSetColor(color);
-        ofRect(x - w/2, y - h/2, w, h);
-    } else if(status == e_dying) {
-        // color   = ofColor(255, 255, 70);
+    // dead ステータス以外なら描画
+    if(status != e_dead){
         ofSetColor(color);
         ofRect(x - w/2, y - h/2, w, h);
     }
 }
 
 void SimpleEnemy::reactShotHit(int damage){
-    hitPoint-=damage;
+    hitPoint-=damage;                       // ダメージを受ける
+    hitFrame    = ofGetFrameNum();          // ヒットしたフレーム記憶
+    color       = ofColor(255, 255, 70);    // ヒット中の色
+    y-=5;       // ノックバック
     
     // cout << "HIT !! : " << hitNum << "\n";
     if(hitPoint <= 0){

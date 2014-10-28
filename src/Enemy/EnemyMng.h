@@ -18,7 +18,7 @@ class EnemyMng{
     
 private:
     int             enemyNum;
-    AbstEnemy       * enemies[10];
+    AbstEnemy       * enemies[15];
     
     public :
     
