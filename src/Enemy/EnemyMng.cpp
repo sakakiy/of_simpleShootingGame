@@ -15,7 +15,7 @@ EnemyMng::EnemyMng(){
 
 void EnemyMng::init(){
     for(int i=0; i<enemyNum; i++){
-        enemies[i] = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), 150, 40, 40);
+        enemies[i] = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), 100 + ofRandom(1.0) * 50, 30, 30);
     }
 }
 

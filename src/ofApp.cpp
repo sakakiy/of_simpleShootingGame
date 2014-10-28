@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    attacker    = new Attacker(ofGetWidth()/2, 500, 20, 20);
+    attacker    = new Attacker(ofGetWidth()/2, 900, 20, 20);
     shot        = new SimpleShot();
 
     attacker->setShot(shot);
