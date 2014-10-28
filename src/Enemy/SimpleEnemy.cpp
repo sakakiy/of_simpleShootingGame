@@ -45,6 +45,8 @@ void SimpleEnemy::update(){
         dying();
     }
     
+    y+=1;
+    
     // ショットにあたった時の色の変化と元に戻る
     if(hitFrame != 0 && ofGetFrameNum() - hitFrame > reactFrame){
         hitFrame    = 0;
@@ -102,7 +104,7 @@ void SimpleEnemy::dead(){
     status  = e_dead;
     x       = 100;
     y       = -100;
-    init();
+    // init();
 }
 
 // 当たり判定をするかどうか
