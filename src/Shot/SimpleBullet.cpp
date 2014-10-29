@@ -30,7 +30,7 @@ SimpleBullet::SimpleBullet(float _x, float _y, float _w, float _h){
 void SimpleBullet::init(){
     vx          = 0;
     vy          = 0;
-    shotVy      = -6;
+    shotVy      = -20;
     
     shotable    = true;
     color       = ofColor(244, 244, 100);
