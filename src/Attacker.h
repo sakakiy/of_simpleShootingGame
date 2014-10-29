@@ -23,8 +23,6 @@ public:
     void setShot(AbstShot* s){shot = s;}
     void update();
     void draw();
-
-    
 };
 
 #endif /* defined(__simpleShootingGame__Attacker__) */

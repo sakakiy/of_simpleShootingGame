@@ -15,8 +15,8 @@ Attacker::Attacker(float _x, float _y, float _w, float _h){
     h = _h;
     color = ofColor(200, 255, 200);
     
-    vx = 5;
-    vy = 5;
+    vx = 8;
+    vy = 8;
 }
 
 void Attacker::update(){
