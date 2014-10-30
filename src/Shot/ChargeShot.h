@@ -15,13 +15,35 @@
 class ChargeShot : public AbstShot{
     
 private:
+    enum Status{
+        s_ready,
+        s_charge,
+        s_shot,
+    };
+    
+    Status  status;
+    int     chargeEnergy;
+    int     energyMax;
+    int     chargeLevel;
+    
+    float   x, y, vx, vy;
+    float   radius;
+    ofColor color;
+    
+    bool    chargingFlag;
     
 public:
+    
+    ChargeShot();
     
     void    init();
     void    update();
     void    draw();
     
+    void    startCharge();
+    void    shot(float, float);
+    void    initShot();
+    void    checkCollisionEnemy(AbstEnemy *);
     
 };
 

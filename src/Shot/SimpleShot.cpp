@@ -56,7 +56,7 @@ void SimpleShot::checkCollisionEnemy(AbstEnemy * enemy){
             if(pow(sumRadius, 2) > pow(diffX, 2) + pow(diffY, 2)){
                 bullet[i].initShot();
                 enemy->reactShotHit(damage);
-                cout << "SIMPLE HIT : " << i << "\n";
+                // ¡cout << "SIMPLE HIT : " << i << "\n";
             }
         }
     }
