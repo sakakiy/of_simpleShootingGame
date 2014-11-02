@@ -1,27 +1,15 @@
 #pragma once
 
 #include "ofMain.h"
-
-#include "Attacker.h"
-#include "AbstShot.h"
-#include "SimpleShot.h"
-#include "DoubleShot.h"
-
-#include "EnemyMng.h"
-#include "AbstEnemy.h"
-#include "SimpleEnemy.h"
-
-#include "CollisionMng.h"
-#include "StatusViewer.h"
+#include "AbstScene.h"
+#include "StartScene.h"
+#include "GameScene.h"
+#include "Scene/OptionScene.h"
 
 class ofApp : public ofBaseApp{
     
 private:
-    Attacker*       attacker;
-    AbstShot*       shot;
-    EnemyMng        enemyMng;
-    CollisionMng    colMng;
-    StatusViewer    sttViewer;
+    AbstScene *scene;
     
 public:
     void setup();
@@ -37,8 +25,6 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-    
-    // self function
-    void changeShot();
+
     
 };

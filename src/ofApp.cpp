@@ -2,71 +2,23 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    attacker    = new Attacker(ofGetWidth()/2, 900, 20, 20);
-    shot        = new SimpleShot();
-    
-    attacker->setShot(shot);
-    
-    enemyMng.init();
-    
-    colMng = CollisionMng();
-    colMng.setAttacker(attacker);
-    colMng.setShot(shot);
-    colMng.setEnemyMng(&enemyMng);
-    
-    sttViewer.init();
-    
-    enemyMng.setSttViewer(&sttViewer);
+    scene = new GameScene();
+    scene->setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    // 衝突判定
-    colMng.update();
-    
-    // ショットや自機の動作更新
-    shot->update();
-    attacker->update();
-    enemyMng.update();
-    
-    sttViewer.update();
-    
-    // キーボード入力によるショット変更
-    changeShot();
+    scene->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    shot->draw();
-    attacker->draw();
-    enemyMng.draw();
-    sttViewer.draw();
-}
-
-//--------------------------------------------------------------
-void ofApp::changeShot(){
-    if(ofGetKeyPressed('s')){
-        shot = new SimpleShot();
-        attacker->setShot(shot);
-        colMng.setShot(shot);
-        // cout << "CHANGE : SIMPLE SHOT\n";
-    } else if(ofGetKeyPressed('d')){
-        shot = new DoubleShot();
-        attacker->setShot(shot);
-        colMng.setShot(shot);
-        // cout << "CHANGE : DOUBLE SHOT\n";
-    }
+    scene->draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    // cout << "KEY : " << key << "\n";
-    if(key == 'i'){
-        setup();
-        cout << "INIT ofApp\n";
-    } else if(key == 'v'){
-        sttViewer.addScore(100);
-    }
+
 }
 
 //--------------------------------------------------------------
