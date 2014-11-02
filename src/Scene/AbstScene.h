@@ -19,7 +19,6 @@ public:
     virtual void setup() = 0;
     virtual void update() = 0;
     virtual void draw() = 0;
-    virtual void changeScene() = 0;
 };
 
 #endif /* defined(__simpleShootingGame__AbstScene__) */
