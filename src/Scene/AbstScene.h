@@ -13,7 +13,8 @@
 #include <ofMain.h>
 
 class AbstScene{
-private:
+protected:
+    AbstScene **scene;
     
 public:
     virtual void setup() = 0;

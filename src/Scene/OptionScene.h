@@ -10,12 +10,13 @@
 #define __simpleShootingGame__OptionScene__
 
 #include <stdio.h>
-#include "AbstScene.h"
+#include "Scene.h"
 
 class OptionScene : public AbstScene{
 private:
     
 public:
+    OptionScene(AbstScene **);
     void setup();
     void update();
     void draw();

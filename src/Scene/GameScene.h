@@ -10,7 +10,7 @@
 #define __simpleShootingGame__GameScene__
 
 #include <stdio.h>
-#include "AbstScene.h"
+#include "Scene.h"
 
 #include "Attacker.h"
 #include "AbstShot.h"
@@ -33,6 +33,7 @@ private:
     StatusViewer    sttViewer;
     
 public:
+    GameScene(AbstScene **);
     void setup();
     void update();
     void draw();

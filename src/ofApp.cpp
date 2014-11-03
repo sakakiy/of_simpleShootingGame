@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    scene = new GameScene();
+    scene = new StartScene(&scene);
     scene->setup();
 }
 

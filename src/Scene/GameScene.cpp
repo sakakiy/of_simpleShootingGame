@@ -8,6 +8,12 @@
 
 #include "GameScene.h"
 
+GameScene::GameScene(AbstScene **s){
+    scene = s;
+    
+    setup();
+}
+
 void GameScene::setup(){
     attacker    = new Attacker(ofGetWidth()/2, 900, 20, 20);
     shot        = new SimpleShot();
@@ -28,6 +34,9 @@ void GameScene::setup(){
 
 
 void GameScene::update(){
+    if(ofGetKeyPressed('c')){
+        *scene = new StartScene(scene);
+    }
     // 衝突判定
     colMng.update();
     
@@ -65,6 +74,6 @@ void GameScene::draw(){
 }
 
 void GameScene::changeScene(){
-        
+    
 }
 

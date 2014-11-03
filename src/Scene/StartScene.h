@@ -10,12 +10,14 @@
 #define __simpleShootingGame__StartScene__
 
 #include <stdio.h>
-#include "AbstScene.h"
+#include <ofMain.h>
+#include "Scene.h"
 
 class StartScene : public AbstScene{
 private:
     
 public:
+    StartScene(AbstScene **);
     void setup();
     void update();
     void draw();
