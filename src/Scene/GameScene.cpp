@@ -59,9 +59,13 @@ void GameScene::update(){
         
         // キーボード入力によるショット変更
         changeShot();
+        
+        judgeGameStatus();
+        /*
         if(ofGetKeyPressed('n')){
             status = s_end;
         }
+         */
     } else if(status == s_end){
         if(ofGetKeyPressed('p')){
             *scene = new StartScene(scene);
@@ -81,6 +85,14 @@ void GameScene::changeShot(){
         attacker->setShot(shot);
         colMng.setShot(shot);
         // cout << "CHANGE : DOUBLE SHOT\n";
+    }
+}
+
+
+// ゲームの状態判定
+void GameScene::judgeGameStatus(){
+    if(enemyMng.isAllDestroy()){
+        status = s_end;
     }
 }
 

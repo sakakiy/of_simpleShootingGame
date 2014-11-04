@@ -39,6 +39,7 @@ private:
     StatusViewer    sttViewer;
     
     int             waitFrameCount;
+    void            judgeGameStatus();
     
 public:
     GameScene(AbstScene **);
