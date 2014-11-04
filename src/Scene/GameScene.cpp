@@ -30,6 +30,10 @@ void GameScene::setup(){
     sttViewer.init();
     
     enemyMng.setSttViewer(&sttViewer);
+    
+    // ゲームの状態を準備状態に変更
+    status = s_ready;
+    waitFrameCount  = ofGetFrameNum();
 }
 
 
@@ -37,18 +41,32 @@ void GameScene::update(){
     if(ofGetKeyPressed('c')){
         *scene = new StartScene(scene);
     }
-    // 衝突判定
-    colMng.update();
     
-    // ショットや自機の動作更新
-    shot->update();
-    attacker->update();
-    enemyMng.update();
-    
-    sttViewer.update();
-    
-    // キーボード入力によるショット変更
-    changeShot();
+    if(status == s_ready){
+        if(ofGetFrameNum() - waitFrameCount > 120){
+            status = s_playing;
+        }
+    }else if(status == s_playing){
+        // 衝突判定
+        colMng.update();
+        
+        // ショットや自機の動作更新
+        shot->update();
+        attacker->update();
+        enemyMng.update();
+        
+        sttViewer.update();
+        
+        // キーボード入力によるショット変更
+        changeShot();
+        if(ofGetKeyPressed('n')){
+            status = s_end;
+        }
+    } else if(status == s_end){
+        if(ofGetKeyPressed('p')){
+            *scene = new StartScene(scene);
+        }
+    }
 }
 
 
@@ -71,6 +89,19 @@ void GameScene::draw(){
     attacker->draw();
     enemyMng.draw();
     sttViewer.draw();
+    
+
+    if(status == s_ready){
+        ofSetColor(120, 130, 255, 100);
+        ofRect(30, 30, ofGetWindowWidth() - 60, ofGetWindowHeight() - 60);
+        ofSetColor(0, 0, 0);
+        ofDrawBitmapString("Ready?", ofGetWindowWidth()/2, ofGetWindowHeight()/2);
+    } else if(status == s_end){
+        ofSetColor(120, 130, 255, 100);
+        ofRect(30, 30, ofGetWindowWidth() - 60, ofGetWindowHeight() - 60);
+        ofSetColor(0, 0, 0);
+        ofDrawBitmapString("end..", ofGetWindowWidth()/2, ofGetWindowHeight()/2);
+    }
 }
 
 void GameScene::changeScene(){

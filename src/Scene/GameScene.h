@@ -26,11 +26,19 @@
 
 class GameScene : public AbstScene{
 private:
+    enum Status{
+        s_ready,
+        s_playing,
+        s_end,
+        s_pause
+    } status;
     Attacker*       attacker;
     AbstShot*       shot;
     EnemyMng        enemyMng;
     CollisionMng    colMng;
     StatusViewer    sttViewer;
+    
+    int             waitFrameCount;
     
 public:
     GameScene(AbstScene **);
