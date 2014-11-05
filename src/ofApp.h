@@ -6,6 +6,7 @@
 #include "AbstShot.h"
 #include "SimpleShot.h"
 #include "DoubleShot.h"
+#include "ChargeShot.h"
 
 #include "EnemyMng.h"
 #include "AbstEnemy.h"

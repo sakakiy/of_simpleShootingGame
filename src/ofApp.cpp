@@ -55,6 +55,10 @@ void ofApp::changeShot(){
         attacker->setShot(shot);
         colMng.setShot(shot);
         // cout << "CHANGE : DOUBLE SHOT\n";
+    } else if(ofGetKeyPressed('f')){
+        shot = new ChargeShot();
+        attacker->setShot(shot);
+        colMng.setShot(shot);
     }
 }
 
