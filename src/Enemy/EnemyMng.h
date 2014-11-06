@@ -14,14 +14,18 @@
 #include "SimpleEnemy.h"
 #include "StatusViewer.h"
 
+#define ENEMY_NUM 5
+
 class EnemyMng{
     
 private:
     int             enemyNum;
-    AbstEnemy       * enemies[15];
+    AbstEnemy       * enemies[ENEMY_NUM];
+    int             liveEnemyCount;
+    bool            flagAllDestroy;
     
-    public :
     
+public:
     EnemyMng();
     void            init();
     void            update();
@@ -29,6 +33,7 @@ private:
     void            setSttViewer(StatusViewer *s);
     int             getEnemyNum(){return enemyNum;}
     AbstEnemy       * getEnemy(int i){return enemies[i];}
+    bool            isAllDestroy(){ return flagAllDestroy;}
     
 };
 
