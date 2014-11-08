@@ -14,10 +14,17 @@ EnemyMng::EnemyMng(){
 }
 
 void EnemyMng::init(){
-    liveEnemyCount = 0;
+    liveEnemyCount = enemyNum;
+    
+    float enemyX        = 0;
+    float size          = 40;
+    float windowWidth   = ofGetWindowWidth();
+    
     for(int i=0; i<enemyNum; i++){
-        enemies[i] = new SimpleEnemy(ofRandom(1.0) * ofGetWidth(), -150 - 50 * i, 40, 40);
-        liveEnemyCount++;
+        if(i % 3 == 0) enemyX = ofRandom(0.1, 0.9) * windowWidth;
+
+        enemies[i] = new SimpleEnemy(enemyX, -150 - (size + 20) * i, size, size);
+        enemies[i]->setSpeed(0, 3);
     }
 
 }

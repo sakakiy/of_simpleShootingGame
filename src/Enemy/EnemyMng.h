@@ -14,7 +14,7 @@
 #include "SimpleEnemy.h"
 #include "StatusViewer.h"
 
-#define ENEMY_NUM 5
+#define ENEMY_NUM 27
 
 class EnemyMng{
     

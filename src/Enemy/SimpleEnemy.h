@@ -31,6 +31,7 @@ public:
     void dying();           // 死ぬリアクション
     void dead();            // 体力がなくなって死ぬときの処理
     bool isHitable();       // 当たり判定処理をする状態かどうか
+
 };
 
 #endif /* defined(__simpleShootingGame__SimpleEnemy__) */

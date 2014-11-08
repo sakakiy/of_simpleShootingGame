@@ -32,6 +32,7 @@ public:
     virtual void    dead() = 0;         // 死亡処理
     virtual bool    isHitable() = 0;    // 当たり判定処理をする状態かどうか
     void            setSttViewer(StatusViewer *s){sttViewer = s;};
+    void            setSpeed(float x, float y){vx = x; vy = y;}
     
 };
 

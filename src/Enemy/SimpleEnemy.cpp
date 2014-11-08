@@ -27,17 +27,20 @@ SimpleEnemy::SimpleEnemy(float _x, float _y, float _w, float _h){
 }
 
 void SimpleEnemy::init(){
-    // 生存ステータス
-    status      = e_live;
     
-    hitPoint    = 3;
+    vx          = 0;        // 敵の速度
+    vy          = 2;        // 敵の速度
+    
+    status      = e_live;   // 生存ステータス
+    
+    hitPoint    = 3;        // 的に体力
+    score       = 250;      // 敵を倒した時に取得するスコア
+    
     color       = ofColor(255, 200, 170);
     colorAlfa   = 255;
-    
-    score       = 150;
-    
-    hitFrame    = 0;
-    reactFrame  = 3;    // ショットがあたって色が変わっているフレーム
+
+    hitFrame    = 0;        // 毎フレーム被弾しないように、あたった時のフレームを記憶しておく
+    reactFrame  = 3;        // ショットがあたって色が変わっているフレーム
 }
 
 void SimpleEnemy::update(){
@@ -45,7 +48,7 @@ void SimpleEnemy::update(){
         dying();
     }
     
-    y+=1;
+    y+=vy;
     
     // ショットにあたった時の色の変化と元に戻る
     if(hitFrame != 0 && ofGetFrameNum() - hitFrame > reactFrame){
