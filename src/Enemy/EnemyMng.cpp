@@ -17,13 +17,19 @@ void EnemyMng::init(){
     liveEnemyCount = enemyNum;
     
     float enemyX        = 0;
+    float enemyY        = -150;
     float size          = 40;
+
     float windowWidth   = ofGetWindowWidth();
     
     for(int i=0; i<enemyNum; i++){
-        if(i % 3 == 0) enemyX = ofRandom(0.1, 0.9) * windowWidth;
-
-        enemies[i] = new SimpleEnemy(enemyX, -150 - (size + 20) * i, size, size);
+        enemyY  -= size + 20;
+        if(i % 3 == 0){
+            enemyX  = ofRandom(0.1, 0.9) * windowWidth;
+            enemyY  -= 150;
+        }
+        
+        enemies[i] = new SimpleEnemy(enemyX, enemyY, size, size);
         enemies[i]->setSpeed(0, 3);
     }
 
