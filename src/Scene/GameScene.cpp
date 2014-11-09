@@ -43,7 +43,7 @@ void GameScene::update(){
     }
     
     if(status == s_ready){
-        if(ofGetFrameNum() - waitFrameCount > 120){
+        if(ofGetFrameNum() - waitFrameCount > 60){
             status = s_playing;
         }
     }else if(status == s_playing){

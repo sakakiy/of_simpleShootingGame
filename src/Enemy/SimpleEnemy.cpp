@@ -33,7 +33,7 @@ void SimpleEnemy::init(){
     
     status      = e_live;   // 生存ステータス
     
-    hitPoint    = 3;        // 的に体力
+    hitPoint    = 2;        // 敵の体力
     score       = 250;      // 敵を倒した時に取得するスコア
     
     color       = ofColor(255, 200, 170);
@@ -66,18 +66,18 @@ void SimpleEnemy::draw(){
     }
 }
 
-void SimpleEnemy::reactShotHit(int damage){
+int SimpleEnemy::reactShotHit(int damage){
     hitPoint-=damage;                       // ダメージを受ける
     hitFrame    = ofGetFrameNum();          // ヒットしたフレーム記憶
     color       = ofColor(255, 255, 70);    // ヒット中の色
     y-=5;       // ノックバック
     
     // cout << "HIT !! : " << hitNum << "\n";
-    if(hitPoint <= 0){
-        status = e_dying;
-        sttViewer->addScore(score);
-    }
+    status = e_dying;
+    sttViewer->addScore(score);
     
+    // ヒットポイントを返す
+    return hitPoint;
 }
 
 void SimpleEnemy::dying(){

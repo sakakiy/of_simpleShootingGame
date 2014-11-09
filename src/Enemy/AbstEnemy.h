@@ -28,7 +28,7 @@ protected:
     StatusViewer    * sttViewer;
    
 public:
-    virtual void    reactShotHit(int) = 0; // ショットにあたった時の反応 引数はショットの威力
+    virtual int     reactShotHit(int) = 0; // ショットにあたった時の反応 引数はショットの威力 返り値は敵の体力
     virtual void    dead() = 0;         // 死亡処理
     virtual bool    isHitable() = 0;    // 当たり判定処理をする状態かどうか
     void            setSttViewer(StatusViewer *s){sttViewer = s;};

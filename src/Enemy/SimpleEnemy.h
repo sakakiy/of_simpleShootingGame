@@ -27,7 +27,7 @@ public:
     SimpleEnemy(float _x, float _y, float _w, float _h);
     void update();
     void draw();
-    void reactShotHit(int); // ショットがヒットした時の処理
+    int  reactShotHit(int); // ショットがヒットした時の処理 返り値は敵の体力
     void dying();           // 死ぬリアクション
     void dead();            // 体力がなくなって死ぬときの処理
     bool isHitable();       // 当たり判定処理をする状態かどうか
